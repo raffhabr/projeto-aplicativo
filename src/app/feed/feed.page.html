@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Feed de Comidas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let comida of refeicoesMostradas">
+      <ion-thumbnail slot="start">
+        <img [src]="comida.strMealThumb" alt="Imagem da comida" />
+      </ion-thumbnail>
+      <ion-label>
+        <h2>{{ comida.strMeal }}</h2>
+        <p>{{ comida.strCategory }} - {{ comida.strArea }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button routerLink="/home">Voltar home</ion-button>
+
+  <ion-infinite-scroll (ionInfinite)="carregarMaisRefeicoes($event)">
+    <ion-infinite-scroll-content loadingSpinner="bubbles" loadingText="Carregando mais...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>

@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home" fill="clear">Voltar</ion-button>
+    </ion-buttons>
+    <ion-title>Especial 1</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <img id="borda" src="https://images.pexels.com/photos/70497/pexels-photo-70497.jpeg" alt="Especial 1" />
+
+  <p style="margin-top: 12px; font-size: 1.2em; font-weight: bold; color: green;">
+    R$ 18,00
+  </p>
+
+  <!-- Controle de quantidade com botões + e - -->
+  <ion-item lines="none" style="display: flex; align-items: center; justify-content: center;">
+    <ion-button (click)="diminuirQuantidade()" fill="outline" size="small">-</ion-button>
+    
+    <p style="margin: 0 20px; font-size: 1.2em; width: 40px; text-align: center;">
+      {{ quantidade }}
+    </p>
+    
+    <ion-button (click)="aumentarQuantidade()" fill="outline" size="small">+</ion-button>
+  </ion-item>
+
+  <ion-button expand="block" style="margin-top: 20px;" (click)="adicionarAoMercado()">
+    Adicionar ao Mercado
+  </ion-button>
+</ion-content>

@@ -1,0 +1,6 @@
+#borda {
+  width: 100%;
+  height: 250px;       /* altura fixa igual da panqueca */
+  object-fit: cover;   /* mantém proporção e preenche */
+  border-radius: 12px; /* borda arredondada */
+}
